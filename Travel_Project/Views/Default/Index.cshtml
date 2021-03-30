@@ -1,0 +1,89 @@
+﻿@using Travel_Project.Models.Siniflar
+@model List<Blog>
+@{
+	ViewBag.Title = "Index";
+	Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+<div class="header-banner">
+	<div class="wrap">
+		<div class="banner">
+			<div class="indent">
+				<h2 class="indent-left margin-bot" style="margin-left:80px;">Tatil & Seyahat Blog </h2>
+				<div class="banner-left">
+					<div class="con-text">
+						<div class="grid1-img">
+							<img src="~/web/images/glass.png" alt="">
+						</div>
+						<div class="grid1-desc">
+							<p>Restorantlar</p>
+						</div>
+						<div class="clear"></div>
+					</div>
+					<div class="con-text">
+						<div class="grid1-img">
+							<img src="~/web/images/flight.png" alt="">
+						</div>
+						<div class="grid1-desc">
+							<p>Uçuşlar</p>
+						</div>
+						<div class="clear"></div>
+					</div>
+					<div class="con-text">
+						<div class="grid1-img">
+							<img src="~/web/images/group.png" alt="">
+						</div>
+						<div class="grid1-desc">
+							<p>Yapılacak Şeyler</p>
+						</div>
+						<div class="clear"></div>
+					</div>
+					<div class="con-text">
+						<div class="grid1-img">
+							<img src="~/web/images/key.png" alt="">
+						</div>
+						<div class="grid1-desc">
+							<p>Ulaşım</p>
+						</div>
+						<div class="clear"></div>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="header_bottom_right_images">
+
+					<div class="slider" style="width:660px;height:400px;">
+						<ul class="rslides" id="slider1">
+							@foreach (var x in Model)//Slidera blog fotoğraflarını getir.
+							{
+								<li><img src="@x.BlogImage" alt=""></li>
+							}
+
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+<div class"content">
+	<div class="wrap">
+		<div class="wrapper">
+			<div class="con-top">
+				<h3>Tatil ve Seyahat Blog Sayfamıza Hoşgeldiniz!!</h3>
+				<p>Gezip görülen yerlerin en güzel şekilde anlatıldığı bu sitede tatilin keyfini çıkarabailirsiniz..Yorumlarınızı ve deneyimlerinizi bizimle paylaşmayı unutmayın.Keyifli okumalar ve bol gezmeli tatiller dileriz..</p>
+			</div>
+
+			@Html.Action("Partial1", "Default") @*//Partial viewi dahil ettik.*@
+			<div class="grids">
+				<div class="box1">
+					@Html.Action("Partial3", "Default")
+					@Html.Action("Partial4", "Default")
+
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
